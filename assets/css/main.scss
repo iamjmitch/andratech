@@ -69,6 +69,7 @@ html {
   @include flex(row);
   video {
     object-fit: cover;
+    width: 100%;
   }
   span {
     text-transform: uppercase;
