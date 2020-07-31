@@ -1,3 +1,5 @@
+@import './variables';
+@import './mixins';
 * {
   padding: 0;
   margin: 0;
@@ -5,6 +7,97 @@
   overflow: auto;
 }
 
+a {
+  text-decoration: none;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+#fullpage {
+  width: 100%;
+}
+#header {
+  #logoFull {
+    width: 100%;
+    @include flex(row);
+    background: white;
+    padding: 10px 0;
+    border-bottom: 1px solid $greyLine;
+  }
+  nav {
+    background: white;
+    border-bottom: 1px solid $greyLine;
+
+    #navContainer {
+      @include contentContainer(1200px);
+      @include flex(row);
+    }
+    a {
+      line-height: 19px;
+      padding: 5px 10px;
+      color: black;
+      font-family: $headerFont;
+      font-weight: bolder;
+      font-size: 16px;
+      .logoSmall {
+        height: 16px;
+        overflow: hidden;
+
+        img {
+          height: 16px;
+          width: auto;
+        }
+      }
+    }
+    .hidden {
+      display: none;
+    }
+    .left {
+      position: absolute;
+      left: 5px;
+    }
+  }
+}
+
+#hero {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  @include flex(row);
+  video {
+    object-fit: cover;
+  }
+  span {
+    text-transform: uppercase;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.787);
+    @include flex(column);
+    color: white;
+    font-family: $paraFont;
+    font-weight: bolder;
+    text-align: center;
+    .heroHeader {
+      font-size: $heroHeader;
+      align-self: center;
+    }
+    .heroHeaderSubContainer {
+      @include flex(row);
+
+      .heroHeaderSubLeft {
+        font-size: $heroSub;
+        width: 100%;
+        text-align: left;
+      }
+      .heroHeaderSubRight {
+        font-size: $heroSub;
+        width: 100%;
+        text-align: right;
+      }
+    }
+  }
 }
