@@ -36,7 +36,7 @@ html {
     }
     a {
       line-height: 19px;
-      padding: 5px 10px;
+      padding: 10px 15px;
       color: black;
       font-family: $headerFont;
       font-weight: bolder;
@@ -64,7 +64,7 @@ html {
 #hero {
   position: relative;
   width: 100%;
-  height: 600px;
+  height: 700px;
   overflow: hidden;
   @include flex(row);
   video {
