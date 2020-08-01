@@ -10,4 +10,4 @@ var head = qs('#fullLogoContainer');
 var jumbo = qs('#hero');
 var windowHeight = window.innerHeight;
 
-jumbo.style.height = ((windowHeight - head.offsetHeight) -  + 'px';
+jumbo.style.height = windowHeight - head.offsetHeight + 'px';
