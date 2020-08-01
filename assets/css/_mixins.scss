@@ -8,3 +8,11 @@
   width: $width;
   margin: 0 auto;
 }
+
+@mixin sectionHeading {
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  font-weight: bolder;
+  font-family: $headerFont;
+}

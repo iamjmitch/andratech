@@ -1,0 +1,50 @@
+#banner1 {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background: url(../img/mission.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include flex(row);
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00000070;
+    z-index: 1;
+  }
+  .contentContainer {
+    z-index: 100;
+    @include contentContainer(1200px);
+    @include flex(row);
+    justify-content: center;
+    align-items: center;
+    h4 {
+      font-family: $headerFont;
+      color: white;
+      font-size: 40px;
+    }
+  }
+}
+
+svg.svgBottom {
+  position: absolute;
+  min-width: 100%;
+  height: auto;
+  bottom: 0;
+  z-index: 2;
+  display: block;
+}
+
+svg.svgTop {
+  position: absolute;
+  min-width: 100%;
+  height: auto;
+  top: 0;
+  z-index: 2;
+  display: block;
+}

@@ -1,0 +1,71 @@
+#hero {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+  @include flex(row);
+  video {
+    object-fit: cover;
+    width: 100%;
+  }
+  span {
+    text-transform: uppercase;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.787);
+    @include flex(column);
+    color: white;
+    font-family: $headerFont;
+    font-weight: bolder;
+    text-align: center;
+    .heroHeader {
+      font-size: $heroHeader;
+      align-self: center;
+      color: white;
+    }
+    .heroHeaderSubContainer {
+      @include flex(column);
+
+      .heroHeaderSubLeft {
+        font-size: $heroSub;
+        width: 100%;
+        text-align: center;
+        color: white;
+        padding-top: 15px;
+        b {
+          padding: 0 15px;
+          color: $blue;
+        }
+      }
+      .heroHeaderSubBottom {
+        text-transform: capitalize;
+        padding-top: 30px;
+        font-size: 20px;
+        width: 100%;
+        font-weight: normal;
+
+        text-align: center;
+      }
+    }
+    .buttonCont {
+      @include flex(row);
+      padding-top: 40px;
+      button {
+        padding: 10px 20px;
+        background: transparent;
+        border: 3px solid $blue;
+        color: white;
+        font-family: $headerFont;
+        font-size: 20px;
+        font-weight: bolder;
+        border-radius: 8px;
+        transition: 0.5s;
+        &:hover {
+          cursor: pointer;
+          box-shadow: inset 300px 0px 0px 0px $blue;
+        }
+      }
+    }
+  }
+}

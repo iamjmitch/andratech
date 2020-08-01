@@ -1,0 +1,42 @@
+#header {
+  #logoFull {
+    width: 100%;
+    @include flex(row);
+    background: white;
+    padding: 30px 0;
+    border-bottom: 1px solid $greyLine;
+  }
+  nav {
+    background: white;
+    border-bottom: 1px solid $greyLine;
+
+    #navContainer {
+      @include contentContainer(1200px);
+      @include flex(row);
+    }
+    a {
+      line-height: 19px;
+      padding: 10px 15px;
+      color: black;
+      font-family: $headerFont;
+      font-weight: bolder;
+      font-size: 16px;
+      .logoSmall {
+        height: 16px;
+        overflow: hidden;
+
+        img {
+          height: 16px;
+          width: auto;
+        }
+      }
+    }
+    .hidden {
+      display: none;
+    }
+    .left {
+      position: absolute;
+      left: 5px;
+    }
+  }
+}

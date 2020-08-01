@@ -1,0 +1,64 @@
+#whyChooseUsContainer {
+  background: $lightGrey;
+  width: 100%;
+  padding: 50px 0;
+  #whyChooseUs {
+    @include contentContainer(1200px);
+    @include flex(column);
+    .sectionHeadingContainer {
+      @include flex(column);
+      align-items: center;
+      h2 {
+        @include sectionHeading;
+      }
+      .headingUnderline {
+        min-height: 4px;
+        min-width: 75px;
+        background: $blue;
+      }
+    }
+    .boxContainer {
+      @include contentContainer(1200px);
+      @include flex(row);
+      justify-content: space-around;
+      padding-top: 30px;
+      .box {
+        @include flex(row);
+        max-width: 30%;
+        .iconBox {
+          @include flex(row);
+          min-width: 40px;
+          margin-right: 20px;
+          .icon {
+            width: 40px;
+            height: 40px;
+            background: $blue;
+            border-radius: 100%;
+            text-align: center;
+            @include flex(row);
+            img {
+              width: 70%;
+              display: block;
+            }
+          }
+        }
+        .textBox {
+          @include flex(column);
+
+          color: white;
+          padding-left: 5px;
+          h3 {
+            font-family: $headerFont;
+            font-size: 20px;
+            font-weight: bolder;
+            padding-bottom: 15px;
+          }
+          p {
+            font-family: $paraFont;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
