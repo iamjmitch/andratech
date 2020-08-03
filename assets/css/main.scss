@@ -19,6 +19,12 @@ html {
   scroll-behavior: smooth;
 }
 
+#landing {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 #fullpage {
   width: 100%;
 }

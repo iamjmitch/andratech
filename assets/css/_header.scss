@@ -3,8 +3,11 @@
     width: 100%;
     @include flex(row);
     background: white;
-    padding: 30px 0;
+    padding: 20px 0;
     border-bottom: 1px solid $greyLine;
+    img {
+      width: 150px;
+    }
   }
   nav {
     background: white;

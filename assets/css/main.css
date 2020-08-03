@@ -11,8 +11,12 @@
       -ms-flex-pack: center;
           justify-content: center;
   background: white;
-  padding: 30px 0;
+  padding: 20px 0;
   border-bottom: 1px solid #5f5e5e52;
+}
+
+#header #logoFull img {
+  width: 150px;
 }
 
 #header nav {
@@ -79,6 +83,17 @@ html {
   scroll-behavior: smooth;
 }
 
+#landing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+}
+
 #fullpage {
   width: 100%;
 }
@@ -86,7 +101,10 @@ html {
 #hero {
   position: relative;
   width: 100%;
-  height: 700px;
+  height: 500px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -217,8 +235,12 @@ html {
       -ms-flex-pack: center;
           justify-content: center;
   background: white;
-  padding: 30px 0;
+  padding: 20px 0;
   border-bottom: 1px solid #5f5e5e52;
+}
+
+#header #logoFull img {
+  width: 150px;
 }
 
 #header nav {
@@ -270,9 +292,9 @@ html {
 }
 
 #whyChooseUsContainer {
-  background: #494949;
+  background: #121213;
   width: 100%;
-  padding: 50px 0;
+  padding: 70px 0;
 }
 
 #whyChooseUsContainer #whyChooseUs {
@@ -333,8 +355,9 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding-top: 30px;
 }
 
@@ -342,35 +365,49 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  max-width: 30%;
+  max-width: 23%;
+  background-color: #232325;
+  padding: 16px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#whyChooseUsContainer #whyChooseUs .boxContainer .box:hover {
+  border: 1px solid #006eff;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  cursor: pointer;
 }
 
 #whyChooseUsContainer #whyChooseUs .boxContainer .box .iconBox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   min-width: 40px;
   margin-right: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #whyChooseUsContainer #whyChooseUs .boxContainer .box .iconBox .icon {
-  width: 40px;
-  height: 40px;
-  background: #006eff;
+  width: 60px;
+  height: 60px;
+  padding-bottom: 15px;
   border-radius: 100%;
   text-align: center;
   display: -webkit-box;
@@ -409,7 +446,10 @@ html {
   font-family: "Abel", sans-serif;
   font-size: 20px;
   font-weight: bolder;
-  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 4px solid #006eff;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 
 #whyChooseUsContainer #whyChooseUs .boxContainer .box .textBox p {
@@ -420,10 +460,11 @@ html {
 #banner1 {
   position: relative;
   width: 100%;
-  height: 300px;
+  min-height: 300px;
+  height: 35vh;
   background: url(../img/mission.jpg);
   background-attachment: fixed;
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
   display: -webkit-box;
@@ -444,7 +485,7 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #00000070;
+  background: #000000c2;
   z-index: 1;
 }
 
@@ -471,7 +512,7 @@ html {
 #banner1 .contentContainer h4 {
   font-family: "Abel", sans-serif;
   color: white;
-  font-size: 40px;
+  font-size: 2vw;
 }
 
 svg.svgBottom {
@@ -492,8 +533,14 @@ svg.svgTop {
   display: block;
 }
 
+@media (min-width: 1200px) {
+  #banner1 {
+    min-height: 400px;
+  }
+}
+
 #servicesContainer {
-  background: #282828;
+  background: #232325;
   width: 100%;
   padding: 50px 0;
 }

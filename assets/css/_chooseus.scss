@@ -1,7 +1,7 @@
 #whyChooseUsContainer {
-  background: $lightGrey;
+  background: $darkGrey;
   width: 100%;
-  padding: 50px 0;
+  padding: 70px 0;
   #whyChooseUs {
     @include contentContainer(1200px);
     @include flex(column);
@@ -20,19 +20,29 @@
     .boxContainer {
       @include contentContainer(1200px);
       @include flex(row);
-      justify-content: space-around;
+      justify-content: space-between;
       padding-top: 30px;
       .box {
-        @include flex(row);
-        max-width: 30%;
+        @include flex(column);
+        max-width: 23%;
+        background-color: $lightGrey;
+        padding: 16px;
+        transition: 0.5s;
+        &:hover {
+          border: 1px solid $blue;
+          transform: scale(1.05);
+          cursor: pointer;
+        }
         .iconBox {
-          @include flex(row);
+          @include flex(column);
           min-width: 40px;
           margin-right: 20px;
+          align-items: center;
           .icon {
-            width: 40px;
-            height: 40px;
-            background: $blue;
+            width: 60px;
+            height: 60px;
+            padding-bottom: 15px;
+
             border-radius: 100%;
             text-align: center;
             @include flex(row);
@@ -51,7 +61,9 @@
             font-family: $headerFont;
             font-size: 20px;
             font-weight: bolder;
-            padding-bottom: 15px;
+            margin-bottom: 15px;
+            border-bottom: 4px solid $blue;
+            align-self: flex-start;
           }
           p {
             font-family: $paraFont;
