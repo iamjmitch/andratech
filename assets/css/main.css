@@ -25,7 +25,7 @@
 }
 
 #header nav #navContainer {
-  width: 1200px;
+  width: 80vw;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -39,13 +39,52 @@
           justify-content: center;
 }
 
+#header nav #navContainer ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#header nav #navContainer ul li {
+  padding: 0 15px;
+}
+
 #header nav a {
-  line-height: 19px;
-  padding: 10px 15px;
   color: black;
+  line-height: 20px;
   font-family: "Abel", sans-serif;
   font-weight: bolder;
   font-size: 16px;
+}
+
+#header nav a:focus {
+  border: 1px solid #006eff;
+}
+
+#header nav a .headerButton {
+  background-color: #006eff;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  font-weight: 700;
+  margin: 2px 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#header nav a .headerButton:hover {
+  cursor: pointer;
+  background-color: #006effad;
+}
+
+#header nav a .headerButton:focus {
+  background-color: #006effad;
+  border: 1px solid white;
 }
 
 #header nav a .logoSmall {
@@ -59,12 +98,47 @@
 }
 
 #header nav .hidden {
-  display: none;
+  opacity: 0;
+  margin-top: 0;
 }
 
 #header nav .left {
   position: absolute;
   left: 5px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  width: 100%;
+  padding: 15px 0;
+  background-color: #232325 !important;
+  -webkit-transition: 0.9s ease-in-out;
+  transition: 0.9s ease-in-out;
+}
+
+.sticky a {
+  color: white !important;
+}
+
+.showMiniLogo {
+  position: absolute;
+  left: 62px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  margin-top: -15px;
+  margin-left: 2vw;
+  opacity: 1;
 }
 
 * {
@@ -249,7 +323,7 @@ html {
 }
 
 #header nav #navContainer {
-  width: 1200px;
+  width: 80vw;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -263,13 +337,52 @@ html {
           justify-content: center;
 }
 
+#header nav #navContainer ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#header nav #navContainer ul li {
+  padding: 0 15px;
+}
+
 #header nav a {
-  line-height: 19px;
-  padding: 10px 15px;
   color: black;
+  line-height: 20px;
   font-family: "Abel", sans-serif;
   font-weight: bolder;
   font-size: 16px;
+}
+
+#header nav a:focus {
+  border: 1px solid #006eff;
+}
+
+#header nav a .headerButton {
+  background-color: #006eff;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  font-weight: 700;
+  margin: 2px 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#header nav a .headerButton:hover {
+  cursor: pointer;
+  background-color: #006effad;
+}
+
+#header nav a .headerButton:focus {
+  background-color: #006effad;
+  border: 1px solid white;
 }
 
 #header nav a .logoSmall {
@@ -283,12 +396,47 @@ html {
 }
 
 #header nav .hidden {
-  display: none;
+  opacity: 0;
+  margin-top: 0;
 }
 
 #header nav .left {
   position: absolute;
   left: 5px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  width: 100%;
+  padding: 15px 0;
+  background-color: #232325 !important;
+  -webkit-transition: 0.9s ease-in-out;
+  transition: 0.9s ease-in-out;
+}
+
+.sticky a {
+  color: white !important;
+}
+
+.showMiniLogo {
+  position: absolute;
+  left: 62px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  margin-top: -15px;
+  margin-left: 2vw;
+  opacity: 1;
 }
 
 #whyChooseUsContainer {
@@ -298,7 +446,7 @@ html {
 }
 
 #whyChooseUsContainer #whyChooseUs {
-  width: 1200px;
+  width: 80vw;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -343,7 +491,7 @@ html {
 }
 
 #whyChooseUsContainer #whyChooseUs .boxContainer {
-  width: 1200px;
+  width: 80vw;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -355,10 +503,10 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: center;
   padding-top: 30px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 #whyChooseUsContainer #whyChooseUs .boxContainer .box {
@@ -372,17 +520,24 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  max-width: 23%;
+  min-width: 280px;
+  width: 15vw;
+  max-width: 360px;
+  min-height: 280px;
+  height: 10vw;
+  max-height: 360px;
+  margin: 15px 15px;
   background-color: #232325;
   padding: 16px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  border: 1px solid #121213;
 }
 
 #whyChooseUsContainer #whyChooseUs .boxContainer .box:hover {
   border: 1px solid #006eff;
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
   cursor: pointer;
 }
 
@@ -398,7 +553,6 @@ html {
       -ms-flex-pack: center;
           justify-content: center;
   min-width: 40px;
-  margin-right: 20px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -440,6 +594,7 @@ html {
           justify-content: center;
   color: white;
   padding-left: 5px;
+  text-align: center;
 }
 
 #whyChooseUsContainer #whyChooseUs .boxContainer .box .textBox h3 {
@@ -448,8 +603,9 @@ html {
   font-weight: bolder;
   margin-bottom: 15px;
   border-bottom: 4px solid #006eff;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 #whyChooseUsContainer #whyChooseUs .boxContainer .box .textBox p {
@@ -491,7 +647,7 @@ html {
 
 #banner1 .contentContainer {
   z-index: 100;
-  width: 1200px;
+  width: 80vw;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -512,12 +668,12 @@ html {
 #banner1 .contentContainer h4 {
   font-family: "Abel", sans-serif;
   color: white;
-  font-size: 2vw;
+  font-size: 3vw;
 }
 
 svg.svgBottom {
   position: absolute;
-  min-width: 100%;
+  width: 100%;
   height: auto;
   bottom: 0;
   z-index: 2;
@@ -526,14 +682,14 @@ svg.svgBottom {
 
 svg.svgTop {
   position: absolute;
-  min-width: 100%;
+  width: 100%;
   height: auto;
   top: 0;
   z-index: 2;
   display: block;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 80vw) {
   #banner1 {
     min-height: 400px;
   }
@@ -546,7 +702,7 @@ svg.svgTop {
 }
 
 #servicesContainer #services {
-  width: 1200px;
+  width: 80vw;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -591,7 +747,7 @@ svg.svgTop {
 }
 
 #servicesContainer #services .boxContainer {
-  width: 1200px;
+  width: 80vw;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;

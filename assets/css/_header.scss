@@ -14,16 +14,44 @@
     border-bottom: 1px solid $greyLine;
 
     #navContainer {
-      @include contentContainer(1200px);
+      @include contentContainer(80vw);
       @include flex(row);
+      ul {
+        display: flex;
+        list-style: none;
+        align-items: center;
+        li {
+          padding: 0 15px;
+        }
+      }
     }
     a {
-      line-height: 19px;
-      padding: 10px 15px;
       color: black;
+      line-height: 20px;
       font-family: $headerFont;
       font-weight: bolder;
       font-size: 16px;
+      &:focus {
+        border: 1px solid $blue;
+      }
+      .headerButton {
+        background-color: $blue;
+        color: white;
+        border: none;
+        outline: none;
+        padding: 10px 20px;
+        font-weight: 700;
+        margin: 2px 0;
+        transition: 0.5s;
+        &:hover {
+          cursor: pointer;
+          background-color: $hoverBlue;
+        }
+        &:focus {
+          background-color: $hoverBlue;
+          border: 1px solid white;
+        }
+      }
       .logoSmall {
         height: 16px;
         overflow: hidden;
@@ -35,11 +63,38 @@
       }
     }
     .hidden {
-      display: none;
+      opacity: 0;
+      margin-top: 0;
     }
     .left {
       position: absolute;
       left: 5px;
     }
   }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  width: 100%;
+  padding: 15px 0;
+  background-color: $lightGrey !important;
+  transition: 0.9s ease-in-out;
+  a {
+    color: white !important;
+  }
+}
+
+.showMiniLogo {
+  position: absolute;
+  left: 62px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: -15px;
+  margin-left: 2vw;
+  opacity: 1;
 }

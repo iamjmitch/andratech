@@ -3,7 +3,7 @@
   width: 100%;
   padding: 50px 0;
   #services {
-    @include contentContainer(1200px);
+    @include contentContainer(80vw);
     @include flex(column);
     .sectionHeadingContainer {
       @include flex(column);
@@ -18,7 +18,7 @@
       }
     }
     .boxContainer {
-      @include contentContainer(1200px);
+      @include contentContainer(80vw);
       @include flex(row);
       justify-content: space-around;
       padding-top: 30px;
