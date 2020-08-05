@@ -615,12 +615,11 @@ html {
   font-size: 16px;
 }
 
-#banner1 {
+#banner {
   position: relative;
   width: 100%;
   min-height: 300px;
   height: 35vh;
-  background: url(../img/mission2.jpg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -637,7 +636,7 @@ html {
           justify-content: center;
 }
 
-#banner1 span {
+#banner span {
   position: absolute;
   top: 0;
   left: 0;
@@ -647,17 +646,17 @@ html {
   z-index: 1;
 }
 
-#banner1 .contentContainer {
+#banner .contentContainer {
   z-index: 100;
   width: 80vw;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -667,10 +666,38 @@ html {
           align-items: center;
 }
 
-#banner1 .contentContainer h4 {
+#banner .contentContainer h4 {
   font-family: "Abel", sans-serif;
   color: white;
   font-size: 3vw;
+}
+
+#banner .contentContainer button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: transparent;
+  border: 3px solid #006eff;
+  color: white;
+  font-family: "Abel", sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
+  border-radius: 8px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#banner .contentContainer button:hover {
+  cursor: pointer;
+  -webkit-box-shadow: inset 150px 0px 0px 0px #006eff;
+          box-shadow: inset 150px 0px 0px 0px #006eff;
+}
+
+.one {
+  background: url(../img/mission2.jpg);
+}
+
+.two {
+  background: url(../img/banner2.jpg);
 }
 
 svg.svgBottom {
@@ -688,6 +715,12 @@ svg.svgTop {
   height: auto;
   top: 0;
   z-index: 2;
+  display: block;
+}
+
+.flipped {
+  -webkit-transform: scale(-1, -1);
+  transform: scale(-1, -1);
   display: block;
 }
 
@@ -843,5 +876,80 @@ svg.svgTop {
 #servicesContainer #services .boxContainer .box .textBox p {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
+}
+
+#map {
+  min-width: 700px;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin-left: 15px;
+}
+
+#visitUs {
+  background-color: #121213;
+  padding: 50px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#visitUs #visitUsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 50px;
+  background-color: #232325;
+  background-image: url(../img/circuit.svg);
+  background-size: auto 750px;
+  padding: 20px;
+  justify-content: center;
+}
+
+#visitUs #visitUsContainer #visitText {
+  color: white;
+  min-width: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 50px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  margin-right: 25px;
+}
+
+#visitUs #visitUsContainer #visitText h5 {
+  font-family: "Abel", sans-serif;
+  font-size: 2vw;
+  padding-bottom: 25px;
+}
+
+#visitUs #visitUsContainer #visitText p,
+#visitUs #visitUsContainer #visitText code {
+  font-family: "Montserrat", sans-serif;
 }
 /*# sourceMappingURL=main.css.map */

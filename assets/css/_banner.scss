@@ -1,10 +1,8 @@
-#banner1 {
+#banner {
   position: relative;
   width: 100%;
   min-height: 300px;
   height: 35vh;
-
-  background: url(../img/mission2.jpg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -22,7 +20,7 @@
   .contentContainer {
     z-index: 100;
     @include contentContainer(80vw);
-    @include flex(row);
+    @include flex(column);
     justify-content: center;
     align-items: center;
     h4 {
@@ -30,7 +28,30 @@
       color: white;
       font-size: 3vw;
     }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: transparent;
+      border: 3px solid $blue;
+      color: white;
+      font-family: $headerFont;
+      font-size: 20px;
+      font-weight: bolder;
+      border-radius: 8px;
+      transition: 0.5s;
+      &:hover {
+        cursor: pointer;
+        box-shadow: inset 150px 0px 0px 0px $blue;
+      }
+    }
   }
+}
+
+.one {
+  background: url(../img/mission2.jpg);
+}
+.two {
+  background: url(../img/banner2.jpg);
 }
 
 svg.svgBottom {
@@ -48,6 +69,14 @@ svg.svgTop {
   height: auto;
   top: 0;
   z-index: 2;
+  display: block;
+}
+
+.flipped {
+  -moz-transform: scale(-1, -1);
+  -o-transform: scale(-1, -1);
+  -webkit-transform: scale(-1, -1);
+  transform: scale(-1, -1);
   display: block;
 }
 

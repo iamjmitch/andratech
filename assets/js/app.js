@@ -25,3 +25,13 @@ function myFunction() {
     smallLogo.classList.add('hidden');
   }
 }
+
+//map setup & options
+function initMap() {
+  var coordinates = { lat: -27.2429453, lng: 152.9973342 };
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 14,
+    center: coordinates,
+  });
+  var marker = new google.maps.Marker({ position: coordinates, map: map });
+}

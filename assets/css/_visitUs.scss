@@ -1,0 +1,43 @@
+#map {
+  min-width: 700px;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin-left: 15px;
+}
+
+#visitUs {
+  background-color: $darkGrey;
+  padding: 50px 0;
+  @include flex(row);
+  #visitUsContainer {
+    @include flex(row);
+    padding-top: 50px;
+    background-color: $lightGrey;
+    background-image: url(../img/circuit.svg);
+    background-size: auto 750px;
+    padding: 20px;
+    justify-content: center;
+
+    #visitText {
+      color: white;
+      min-width: 400px;
+      @include flex(column);
+      align-items: center;
+      padding: 50px;
+      box-sizing: content-box;
+
+      margin-right: 25px;
+
+      h5 {
+        font-family: $headerFont;
+        font-size: 2vw;
+        padding-bottom: 25px;
+      }
+      p,
+      code {
+        font-family: $paraFont;
+      }
+    }
+  }
+}
