@@ -950,6 +950,10 @@ svg.svgTop {
   opacity: 0;
 }
 
+#backToTop:hover {
+  background: #0099ff;
+}
+
 #backToTop:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
@@ -1002,7 +1006,7 @@ svg.svgTop {
   border-color: #555 transparent transparent transparent;
 }
 
-.tooltip:hover .tooltiptext {
+#backToTop:hover .tooltip .tooltiptext {
   visibility: visible;
   opacity: 1;
 }

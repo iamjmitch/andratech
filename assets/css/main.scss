@@ -54,6 +54,9 @@ html {
   z-index: 1000;
   border-radius: 50%;
   opacity: 0;
+  &:hover {
+    background: $hoverBlue;
+  }
   &:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
@@ -98,7 +101,7 @@ html {
   }
 }
 
-.tooltip:hover .tooltiptext {
+#backToTop:hover .tooltip .tooltiptext {
   visibility: visible;
   opacity: 1;
 }
