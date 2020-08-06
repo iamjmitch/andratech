@@ -3,60 +3,50 @@
   width: 100%;
   padding: 50px 0;
   #services {
-    @include contentContainer(80vw);
-    @include flex(column);
-    .sectionHeadingContainer {
+    @include flex(80vw);
+    .box-left,
+    .box-right {
+      color: white;
       @include flex(column);
-      align-items: center;
-      h2 {
-        @include sectionHeading;
-      }
+      max-width: 400px;
+      margin: 0 25px;
+    }
+    .box-left {
+      text-align: center;
       .headingUnderline {
         min-height: 4px;
         min-width: 75px;
-        background: $blue;
+        margin: 0 auto;
+        background: #0057a9;
+        margin-bottom: 30px;
+      }
+      h4 {
+        font-family: $headerFont;
+        font-size: 25px;
+
+        font-weight: 700;
+      }
+      p {
+        font-family: $paraFont;
+        font-size: 16px;
+        padding-bottom: 30px;
+      }
+      img {
+        max-height: 110px;
       }
     }
-    .boxContainer {
-      @include contentContainer(80vw);
-      @include flex(row);
-      justify-content: space-around;
-      padding-top: 30px;
-      .box {
+    .box-right {
+      justify-content: center;
+      .tickLine {
         @include flex(row);
-        max-width: 30%;
-        .iconBox {
-          @include flex(row);
-          min-width: 40px;
-          margin-right: 20px;
-          .icon {
-            width: 40px;
-            height: 40px;
-            background: $blue;
-            border-radius: 100%;
-            text-align: center;
-            @include flex(row);
-            img {
-              width: 70%;
-              display: block;
-            }
-          }
+        align-items: center;
+        margin: 8px 0;
+        img {
+          margin-right: 10px;
         }
-        .textBox {
-          @include flex(column);
-
-          color: white;
-          padding-left: 5px;
-          h3 {
-            font-family: $headerFont;
-            font-size: 20px;
-            font-weight: bolder;
-            padding-bottom: 15px;
-          }
-          p {
-            font-family: $paraFont;
-            font-size: 16px;
-          }
+        p {
+          font-family: $paraFont;
+          font-size: 16px;
         }
       }
     }

@@ -40,3 +40,67 @@ html {
 @import './services';
 
 @import './visitUs';
+
+#backToTop {
+  transition: 0.5s;
+  background: $blue;
+  @include square(40px);
+  @include flex(row);
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 1000;
+  border-radius: 50%;
+  opacity: 0;
+  &:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+  a {
+    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    svg {
+      max-width: 50%;
+      height: auto;
+    }
+  }
+  .tooltiptext {
+    visibility: hidden;
+    font-family: $paraFont;
+    font-size: 12px;
+    width: 100px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -50px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #555 transparent transparent transparent;
+    }
+  }
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+@import './footer';

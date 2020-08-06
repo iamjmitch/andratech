@@ -86,3 +86,13 @@
     }
   }
 }
+
+@media (max-width: 1550px) {
+  .boxContainer {
+    @include contentContainer(95vw);
+    @include flex(row);
+    justify-content: center;
+    padding-top: 30px;
+    flex-wrap: wrap;
+  }
+}

@@ -13,15 +13,16 @@
   #visitUsContainer {
     @include flex(row);
     padding-top: 50px;
-    background-color: $lightGrey;
-    background-image: url(../img/circuit.svg);
-    background-size: auto 750px;
+    // background-color: $lightGrey;
+    // background-image: url(../img/circuit.svg);
+    // background-size: auto 750px;
     padding: 20px;
     justify-content: center;
 
     #visitText {
       color: white;
-      min-width: 400px;
+      text-align: center;
+      min-width: 430px;
       @include flex(column);
       align-items: center;
       padding: 50px;
