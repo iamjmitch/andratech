@@ -10,14 +10,16 @@
             <img src="./assets/img/logo-small.svg" alt="" /></div
         ></a>
         <ul>
-          <li><a href="#">HOME</a></li>
-          <li><a href="#">SERVICES</a></li>
-          <li><a href="#">PRICING</a></li>
-          <li><a href="#">ABOUT US</a></li>
-          <li><a href="#">OUR WORK</a></li>
+          <li><a href="./index.php">HOME</a></li>
+          <li><a href="./services.php">SERVICES</a></li>
+          <li><a href="./pricing.php">PRICING</a></li>
+          <li><a href="./about-us.php">ABOUT US</a></li>
+          <li><a href="./our-work.php">OUR WORK</a></li>
 
           <li>
-            <a href="#"><button class="headerButton">FREE QUOTE</button></a>
+            <a href="./contact.php"
+              ><button class="headerButton">FREE QUOTE</button></a
+            >
           </li>
         </ul>
       </div>
