@@ -12,8 +12,6 @@
       <?php include './inc/visitUs.inc';?>
       <?php include './inc/footer.inc';?>
     </div>
-    <script src="./assets/js/app.js"></script>
-    <script src="./assets/js/maps.js"></script>
-    <script src="http://connect.facebook.net/fr_FR/all.js"></script> 
+    <script src="./assets/js/app.js"></script>      
   </body>
 </html>

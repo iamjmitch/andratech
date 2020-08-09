@@ -1063,6 +1063,8 @@ footer #footerContainer #social a {
 footer #footerContainer #social svg {
   max-height: 40px;
   max-width: 40px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   display: block;
