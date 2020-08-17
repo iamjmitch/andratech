@@ -12,19 +12,19 @@ window.onscroll = function () {
 var navbar = qs('nav');
 var smallLogo = qs('.hidden.left');
 var sticky = navbar.offsetTop;
-const BTTbtn = qs('#backToTop');
+const bTTbtn = qs('#backToTop');
 
 function navChange() {
   if (window.pageYOffset >= sticky) {
     navbar.classList.add('sticky');
     smallLogo.classList.add('showMiniLogo');
     smallLogo.classList.remove('hidden');
-    BTTbtn.style.opacity = '1';
+    bTTbtn.style.opacity = '1';
   } else {
     navbar.classList.remove('sticky');
     smallLogo.classList.remove('showMiniLogo');
     smallLogo.classList.add('hidden');
-    BTTbtn.style.opacity = '0';
+    bTTbtn.style.opacity = '0';
   }
 }
 
