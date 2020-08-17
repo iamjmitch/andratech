@@ -12,6 +12,10 @@
       <?php include './inc/visitUs.inc';?>
       <?php include './inc/footer.inc';?>
     </div>
-    <script src="./assets/js/app.js"></script>      
-  </body>
+    <script src="./assets/js/app.js"></script> 
+    <?php include './inc/FBPosts.inc';?>
+      
+</body>
+
+
 </html>
