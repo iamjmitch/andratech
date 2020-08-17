@@ -54,14 +54,14 @@ class FBPosts extends api{
 
 
     protected function postHasAttachment($postData){
-        $thisPost = $postData['attachments']['data'][0];             
+        $thisPost = $postData['attachments']['data'][0]['media'];             
         //if post has video attached
-        if (isset($thisPost['media']['source'])){
+        if (isset($thisPost['source'])){
            $this->postHasVideo($postData, $postData['message'], $thisPost['media']['source']);
            
         }
         //if post has images only attached
-        else if (isset($thisPost['media']['image']['src'])){
+        else if (isset($thisPost['image']['src'])){
             $this->postHasImage($postData);
             
         }
