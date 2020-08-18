@@ -1027,6 +1027,11 @@ svg.svgTop {
   word-wrap: break-word;
   text-transform: none !important;
   margin-top: 5px;
+  color: white;
+}
+
+#fbPosts .fbPostsContainer .card .cardMessage a:hover {
+  color: #0057a9;
 }
 
 #fbPosts .fbPostsContainer .card .cardMediaContainer {

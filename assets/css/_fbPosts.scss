@@ -51,6 +51,10 @@
           word-wrap: break-word;
           text-transform: none !important;
           margin-top: 5px;
+          color: white;
+          &:hover {
+            color: $blue;
+          }
         }
       }
       .cardMediaContainer {
