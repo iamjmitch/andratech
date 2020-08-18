@@ -1,174 +1,195 @@
-<?php 
+<?php
 require 'api.inc.php';
 
+class FBPosts extends api
+{
+    protected $options;
+    protected $url;
+    protected $posts = "";
 
-
-
-class FBPosts extends api{
-   protected $options;
-   protected $url;
-   protected $posts = "";
-
-   public function __construct(){
-    $this->options = 
-    "permalink_url,message,attachments";
-     $this->url = "https://graph.facebook.com/andratechcomputing/feed?access_token=".$this->accessToken."&fields=".$this->options;
+    public function __construct()
+    {
+        $this->options = "permalink_url,message,attachments";
+        $this->url = "https://graph.facebook.com/andratechcomputing/feed?access_token=" . $this->accessToken . "&fields=" . $this->options;
     }
 
-   //get list of facebook posts
-    protected function getPostsList(){
-        return json_decode(file_get_contents($this->url),true);
+    //get list of facebook posts
+    protected function getPostsList()
+    {
+        return json_decode(file_get_contents($this->url) , true);
     }
 
-    
     //validates the post to make sure only posts with a message are displayed. strips out updates like profile changes
-    protected function postValidator(){
+    protected function postValidator()
+    {
         $postList = $this->getPostsList();
         $validPosts = 0;
-        for ($i = 0; $validPosts < 4; $i++){
+        for ($i = 0;$validPosts < 4;$i++)
+        {
             $thisPost = $postList['data'][$i];
-            if (isset($thisPost['message'])){
+            if (isset($thisPost['message']))
+            {
                 $this->getPostType($thisPost);
-                $validPosts += 1;            }
-            else{
+                $validPosts += 1;
+            }
+            else
+            {
                 //post is skipped as we do not want to display it
+                
             }
         }
     }
 
     //determine what type post is i.e message only, video, photo etc
-    protected function getPostType($postData){
+    protected function getPostType($postData)
+    {
         //message only
-        if (isset($postData['attachments'])){           
-            $this->postHasAttachment($postData);            
+        if (isset($postData['attachments']))
+        {
+            $this->postHasAttachment($postData);
         }
-        else{
+        else
+        {
             $this->postMessageOnly($postData);
         }
     }
 
-    protected function postHasAttachment($postData){
-        $thisPost = $postData['attachments']['data'][0]['media'];             
+    protected function postHasAttachment($postData)
+    {
+        $thisPost = $postData['attachments']['data'][0]['media'];
         //if post has video attached
-        if (isset($thisPost['source'])){
-           $this->postHasVideo($postData, $thisPost['source']);           
+        if (isset($thisPost['source']))
+        {
+            $this->postHasVideo($postData, $thisPost['source']);
         }
         //if post has images only attached
-        else if (isset($thisPost['image']['src'])){
-            $this->postHasImage($postData, );            
+        else if (isset($thisPost['image']['src']))
+        {
+            $this->postHasImage($postData);
         }
-        else{
-         //fall back to message only incase different post type arises not considered when developing
-         $this->postMessageOnly($postData);         
+        else
+        {
+            //fall back to message only incase different post type arises not considered when developing
+            $this->postMessageOnly($postData);
         }
     }
 
-    protected function postHasVideo($postData, $videoLink){
-        if ($this->isYoutube($videoLink)){
+    protected function postHasVideo($postData, $videoLink)
+    {
+        if ($this->isYoutube($videoLink))
+        {
             $autoPlayRemove = strtok($videoLink, '?');
             $iframeWidth = "260";
             $iframeHeight = "260";
             $message = $this->messageHasLink($postData['message']);
-            $cardMedia = '<iframe src="'.$autoPlayRemove.'?autoplay=0" frameborder="0" allowfullscreen width='.$iframeWidth.' height='.$iframeHeight.'></iframe>';
+            $cardMedia = '<iframe src="' . $autoPlayRemove . '?autoplay=0" frameborder="0" allowfullscreen width=' . $iframeWidth . ' height=' . $iframeHeight . '></iframe>';
             $this->cardMaker($cardMedia, $message);
             $this->messageHasLink($message);
-            
-        }else{
-            $this->postHasImage($postData, true);
-            
+
         }
-        
+        else
+        {
+            $this->postHasImage($postData, true);
+
+        }
+
     }
 
-    protected function postHasImage($postData, $isVideo = false){
+    protected function postHasImage($postData, $isVideo = false)
+    {
         $thisPost = $postData['attachments']['data'][0];
         $directLink = $thisPost['target']['url'];
         $tempImgLink = $thisPost['media']['image']['src'];
         $imageLink = $this->isImageBlank($tempImgLink);
         $message = $this->messageHasLink($postData['message']);
-        $cardMedia = '<a href="'.$directLink.'" target="_blank">
-        <img src="'.$imageLink.'" alt="'.$postData['message'].'"> 
+        $cardMedia = '<a href="' . $directLink . '" target="_blank">
+        <img src="' . $imageLink . '" alt="' . $postData['message'] . '"> 
         </a>';
-        $this->cardMaker($cardMedia, $message);     
-         
+        $this->cardMaker($cardMedia, $message);
+
     }
 
     //function to strip the relevant data from the post object and pass to cardMaker() to output
-    protected function postMessageOnly($postData){
+    protected function postMessageOnly($postData)
+    {
         $imgPath = './assets/img/default.jpg';
         $message = $this->messageHasLink($postData['message']);
-        $cardMedia = '<img src="'.$imgPath.'" alt="Andratech Logo">';
+        $cardMedia = '<img src="' . $imgPath . '" alt="Andratech Logo">';
         $this->cardMaker($cardMedia, $message);
-        
-        
+
     }
 
     // cardMaker takes the media and message generated by other functions, turns into a html card component and then add to global variable $posts
-    protected function cardMaker($cardMedia, $message){
-        $output =   '<div class="cardcon">
+    protected function cardMaker($cardMedia, $message)
+    {
+        $output = '<div class="cardcon">
                         <div class="card">                        
                             <div class="cardMediaContainer">
-                                '.$cardMedia.'
+                                ' . $cardMedia . '
                             </div>
                             <div class="cardMessage">
-                            '.$message.'
+                            ' . $message . '
                             </div>
                         </div>
                         <div class="flexgrow">
                         </div>
                     </div>';
-        
-        $this->posts = $this->posts.$output;
-        
-        
-        
+
+        $this->posts = $this->posts . $output;
+
     }
 
-
     //helper functions
-    
-    protected function isYoutube($link){
+    protected function isYoutube($link)
+    {
         //check if link string contains the word "youtube"
         return (strpos($link, 'youtube') !== false);
-        
+
     }
 
     //checks to see if attached images is greater than 1px and if not returns a default image path. safe guard against broken links
-    protected function isImageBlank($link){
-        $getImageSize = getimagesize($link); 
+    protected function isImageBlank($link)
+    {
+        $getImageSize = getimagesize($link);
         $width = substr($getImageSize[3], 0, strpos($getImageSize[3], ' '));
         $width = preg_match_all('!\d+!', $width, $matches);
         $width = ($matches[0][0]) + 0;
         $return = "";
-        if ($width <= 1){
-            $return ="./assets/img/default.jpg";
-        }else{
+        if ($width <= 1)
+        {
+            $return = "./assets/img/default.jpg";
+        }
+        else
+        {
             $return = $link;
         }
         return $return;
     }
 
     //scans link to see if a link id posted in message. if so converts to ahref
-    protected function messageHasLink($message){
+    protected function messageHasLink($message)
+    {
         preg_match_all('#\bhttps?://[^,\s()<>]+(?:\([\w\d]+\)|([^,[:punct:]\s]|/))#', $message, $match);
-        if (!empty($match[0])){
-        $start = strpos($message, $match[0][0]);
-        $end = $start + strlen($match[0][0]);
-        $ahref = '<br><br><a href="'.$match[0][0].'" target="_blank">';            
-        $out = substr_replace($message, "</a>", $end, 0);
-        $out = substr_replace($out, $ahref, $start, 0);
-        return $out;       
-        }else{
+        if (!empty($match[0]))
+        {
+            $start = strpos($message, $match[0][0]);
+            $end = $start + strlen($match[0][0]);
+            $ahref = '<br><br><a href="' . $match[0][0] . '" target="_blank">';
+            $out = substr_replace($message, "</a>", $end, 0);
+            $out = substr_replace($out, $ahref, $start, 0);
+            return $out;
+        }
+        else
+        {
             return $message;
         }
     }
 
-    public function getPosts(){
+    //go function
+    public function getPosts()
+    {
         $this->postValidator();
         echo $this->posts;
     }
-    
 }
-
-
 ?>
