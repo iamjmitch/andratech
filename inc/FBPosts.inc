@@ -43,12 +43,12 @@ class FBPosts extends api{
     //determine what type post is i.e message only, video, photo etc
     protected function getPostType($postData){
         //message only
-        if (!isset($postData['attachments'])){
-            $this->postMessageOnly($postData);
+        if (isset($postData['attachments'])){           
+            $this->postHasAttachment($postData);
             
         }
         else{
-            $this->postHasAttachment($postData);
+            $this->postMessageOnly($postData);
         }
     }
 
@@ -57,7 +57,7 @@ class FBPosts extends api{
         $thisPost = $postData['attachments']['data'][0]['media'];             
         //if post has video attached
         if (isset($thisPost['source'])){
-           $this->postHasVideo($postData, $postData['message'], $thisPost['media']['source']);
+           $this->postHasVideo($postData, $postData['message'], $thisPost['source']);
            
         }
         //if post has images only attached
