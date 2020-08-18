@@ -13,11 +13,12 @@ class FBPosts extends api{
     $this->options = 
     "permalink_url,message,attachments";
      $this->url = "https://graph.facebook.com/andratechcomputing/feed?access_token=".$this->accessToken."&fields=".$this->options;
+    //  var_dump($this->url);
     }
 
    //get list of facebook posts
     protected function getPostsList(){
-        return $postList = json_decode(file_get_contents($this->url),true);
+        return json_decode(file_get_contents($this->url),true);
     }
 
     
@@ -25,7 +26,7 @@ class FBPosts extends api{
     protected function postValidator(){
         $postList = $this->getPostsList();
         $validPosts = 0;
-        for ($i = 0; $validPosts < 10; $i++){
+        for ($i = 0; $validPosts < 4; $i++){
             $thisPost = $postList['data'][$i];
             if (isset($thisPost['message'])){
                 $this->getPostType($thisPost);
@@ -62,7 +63,7 @@ class FBPosts extends api{
         }
         //if post has images only attached
         else if (isset($thisPost['image']['src'])){
-            $this->postHasImage($postData);
+            $this->postHasImage($postData, );
             
         }
         else{
@@ -81,7 +82,7 @@ class FBPosts extends api{
             $this->cardMaker($cardMedia, $message);
             
         }else{
-            //compile image link to video
+            $this->postHasImage($postData, true);
             
         }
         
@@ -93,8 +94,32 @@ class FBPosts extends api{
         
     }
 
-    protected function postHasImage($postData){
-        
+    protected function postHasImage($postData, $isVideo = false){
+        $thisPost = $postData['attachments']['data'][0];
+        $directLink = $thisPost['target']['url'];
+        $tempImgLink = $thisPost['media']['image']['src'];
+        $imageLink = $this->isImageBlank($tempImgLink);
+        $message = $postData['message'];
+        $cardMedia = '<a href="'.$directLink.'" target="_blank">
+        <img src="'.$imageLink.'" alt="'.$message.'"> 
+        </a>';
+        $this->cardMaker($cardMedia, $message);        
+    }
+
+
+
+    protected function isImageBlank($link){
+        $getImageSize = getimagesize($link); 
+        $width = substr($getImageSize[3], 0, strpos($getImageSize[3], ' '));
+        $width = preg_match_all('!\d+!', $width, $matches);
+        $width = ($matches[0][0]) + 0;
+        $return = "";
+        if ($width <= 1){
+            $return ="./assets/img/default.jpg";
+        }else{
+            $return = $link;
+        }
+        return $return;
     }
 
 
@@ -104,7 +129,7 @@ class FBPosts extends api{
 
     //function to strip the relevant data from the post object and pass to cardMaker() to output
     protected function postMessageOnly($postData){
-        $imgPath = '../assets/img/generic-post-image.jpg';
+        $imgPath = './assets/img/default.jpg';
         $message = $postData['message'];
         $cardMedia = '<img src="'.$imgPath.'" alt="Andratech Logo">';
         $this->cardMaker($cardMedia, $message);
@@ -127,10 +152,10 @@ class FBPosts extends api{
                         <div class="cardMessage">
                         '.$message.'
                         </div>
-                    </div>';
+                    </div><br>---------------------------------------------------------';
         
         $this->posts = $this->posts.$output;
-        var_dump($this->posts);
+        
         echo "<br><br>";
         
     }
@@ -186,6 +211,7 @@ class FBPosts extends api{
 
     public function goo(){
         $this->postValidator();
+        var_dump($this->posts);
     }
 
 
