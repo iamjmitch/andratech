@@ -1,0 +1,78 @@
+#fbPosts {
+  padding-bottom: 60px;
+  padding-top: 50px;
+  .sectionHeadingContainer {
+    @include flex(column);
+    align-items: center;
+    h2 {
+      @include sectionHeading;
+    }
+    .headingUnderline {
+      min-height: 4px;
+      min-width: 75px;
+      background: $blue;
+    }
+  }
+  background: $darkGrey;
+  font-family: $paraFont;
+  .fbPostsContainer {
+    @include contentContainer(80vw);
+    @include flex(row);
+    justify-content: center;
+    padding-top: 50px;
+    flex-wrap: wrap;
+    .cardcon {
+      display: flex;
+      flex-direction: column;
+      .flexgrow {
+        flex-grow: 1;
+      }
+    }
+
+    .card {
+      width: 280px;
+      padding-top: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-image: url(../img/circuit.svg);
+      background-color: #232325;
+      background-size: auto 750px;
+      margin: 0 30px;
+      .cardMessage {
+        padding: 10px;
+        color: white;
+        width: 100%;
+        text-transform: capitalize;
+        min-height: 35px;
+        text-align: center;
+
+        a {
+          word-wrap: break-word;
+          text-transform: none !important;
+          margin-top: 5px;
+        }
+      }
+      .cardMediaContainer {
+        width: 260px;
+        height: 260px;
+        overflow: hidden;
+        border: 1px solid #ffffff3b;
+        transition: 0.5s;
+        &:hover {
+          border: 1px solid $blue;
+          opacity: 0.8;
+        }
+        a {
+          width: 100%;
+
+          img,
+          iframe {
+            width: 100%;
+            transition: 0.5s;
+          }
+        }
+      }
+    }
+  }
+}

@@ -9,11 +9,13 @@
       <?php include './inc/banner1.inc';?>
       <?php include './inc/services.inc';?>
       <?php include './inc/banner2.inc';?>
-      <?php include './inc/visitUs.inc';?>
+      <?php //include './inc/visitUs.inc';?>
+      <?php require './inc/FBPosts.inc'; ?>
+      <?php include './inc/getFBPost.inc';?>
       <?php include './inc/footer.inc';?>
     </div>
     <script src="./assets/js/app.js"></script> 
-    <?php include './inc/FBPosts.inc';?>
+    
       
 </body>
 

@@ -923,6 +923,137 @@ svg.svgTop {
   font-family: "Montserrat", sans-serif;
 }
 
+#fbPosts {
+  padding-bottom: 60px;
+  padding-top: 50px;
+  background: #121213;
+  font-family: "Montserrat", sans-serif;
+}
+
+#fbPosts .sectionHeadingContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#fbPosts .sectionHeadingContainer h2 {
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  font-weight: bolder;
+  font-family: "Abel", sans-serif;
+}
+
+#fbPosts .sectionHeadingContainer .headingUnderline {
+  min-height: 4px;
+  min-width: 75px;
+  background: #0057a9;
+}
+
+#fbPosts .fbPostsContainer {
+  width: 80vw;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-content: center;
+  padding-top: 50px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#fbPosts .fbPostsContainer .cardcon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#fbPosts .fbPostsContainer .cardcon .flexgrow {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+#fbPosts .fbPostsContainer .card {
+  width: 280px;
+  padding-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url(../img/circuit.svg);
+  background-color: #232325;
+  background-size: auto 750px;
+  margin: 0 30px;
+}
+
+#fbPosts .fbPostsContainer .card .cardMessage {
+  padding: 10px;
+  color: white;
+  width: 100%;
+  text-transform: capitalize;
+  min-height: 35px;
+  text-align: center;
+}
+
+#fbPosts .fbPostsContainer .card .cardMessage a {
+  word-wrap: break-word;
+  text-transform: none !important;
+  margin-top: 5px;
+}
+
+#fbPosts .fbPostsContainer .card .cardMediaContainer {
+  width: 260px;
+  height: 260px;
+  overflow: hidden;
+  border: 1px solid #ffffff3b;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#fbPosts .fbPostsContainer .card .cardMediaContainer:hover {
+  border: 1px solid #0057a9;
+  opacity: 0.8;
+}
+
+#fbPosts .fbPostsContainer .card .cardMediaContainer a {
+  width: 100%;
+}
+
+#fbPosts .fbPostsContainer .card .cardMediaContainer a img,
+#fbPosts .fbPostsContainer .card .cardMediaContainer a iframe {
+  width: 100%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
 #backToTop {
   -webkit-transition: 0.5s;
   transition: 0.5s;
