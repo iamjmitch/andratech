@@ -1,3 +1,5 @@
+var card;
+
 function qs(elmt) {
   return document.querySelector(elmt);
 }
@@ -60,6 +62,20 @@ window.fbAsyncInit = function () {
   js.src = 'https://connect.facebook.net/en_US/sdk.js';
   fjs.parentNode.insertBefore(js, fjs);
 })(document, 'script', 'facebook-jssdk');
+
+function showMore($thisCard) {
+  var cardText = $thisCard.parentNode.firstElementChild.nextElementSibling;
+  if ($thisCard.innerHTML === '. . Show More') {
+    $thisCard.innerHTML = '. . Show Less';
+    var messageHeight =
+      $thisCard.parentNode.firstElementChild.nextElementSibling.scrollHeight;
+    cardText.style.maxHeight = `${messageHeight}px`;
+  } else {
+    $thisCard.innerHTML = '. . Show More';
+    cardText.style.height = 'unset';
+    cardText.style.maxHeight = '70px';
+  }
+}
 
 // function waitFB() {
 //   if (typeof FB == 'undefined') {
