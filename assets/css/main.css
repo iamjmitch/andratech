@@ -297,6 +297,41 @@ html {
           box-shadow: inset 300px 0px 0px 0px #0057a9;
 }
 
+.mobileonly {
+  display: none;
+}
+
+.deskonly {
+  display: inline;
+}
+
+/* desktop */
+/* laptop */
+/* tablet */
+/* mobile */
+@media screen and (max-width: 500px) {
+  #hero span .heroHeader {
+    font-size: 12vw;
+  }
+  .mobileonly {
+    display: block;
+  }
+  .deskonly {
+    display: none;
+  }
+  #hero span .heroHeaderSubContainer .heroHeaderSubLeft {
+    font-size: 7vw;
+    color: white;
+    font-weight: bolder;
+  }
+  #hero span {
+    background: rgba(0, 0, 0, 0.581);
+  }
+  .heroHeaderSubBottom {
+    font-size: 26px;
+  }
+}
+
 #header #logoFull {
   width: 100%;
   display: -webkit-box;
@@ -639,9 +674,9 @@ html {
 }
 
 /* desktop */
-@media (max-width: 1550px) {
+@media screen and (max-width: 1550px) {
   #whyChooseUsContainer #whyChooseUs {
-    width: 70vw !important;
+    width: 70vw;
   }
   #whyChooseUsContainer #whyChooseUs .boxContainer {
     width: 700px;
@@ -660,6 +695,26 @@ html {
 
 /* tablet */
 /* mobile */
+@media screen and (max-width: 480px) {
+  #whyChooseUsContainer #whyChooseUs {
+    width: 80vw;
+  }
+  #whyChooseUsContainer #whyChooseUs .boxContainer {
+    width: 100%;
+  }
+  #whyChooseUsContainer #whyChooseUs .boxContainer .box {
+    width: 100%;
+    margin: 15px 0;
+  }
+  #whyChooseUsContainer #whyChooseUs .boxContainer .box .iconBox .icon {
+    width: 100px;
+    height: 100px;
+  }
+  #whyChooseUsContainer #whyChooseUs .boxContainer .box .textBox h3 {
+    font-size: 25px;
+  }
+}
+
 #banner {
   position: relative;
   width: 100%;
@@ -772,7 +827,7 @@ svg.svgTop {
 
 /* desktop */
 /* laptop */
-@media (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
   #banner .contentContainer h4 {
     font-size: 4vw;
     text-align: center;
@@ -780,7 +835,7 @@ svg.svgTop {
 }
 
 /* tablet */
-@media (max-width: 980px) {
+@media screen and (max-width: 980px) {
   #banner .contentContainer h4 {
     font-size: 6vw;
     text-align: center;
@@ -788,10 +843,18 @@ svg.svgTop {
 }
 
 /* mobile */
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   #banner .contentContainer h4 {
-    font-size: 9vw;
+    font-size: 8vw;
     text-align: center;
+    margin-bottom: 10px;
+  }
+  svg.svgBottom,
+  svg.svgTop {
+    display: none;
+  }
+  #banner span {
+    background: #00000066;
   }
 }
 
@@ -892,7 +955,7 @@ svg.svgTop {
 }
 
 /* tablet */
-@media (max-width: 980px) {
+@media screen and (max-width: 980px) {
   #servicesContainer #services {
     -webkit-box-orient: vertical !important;
     -webkit-box-direction: normal !important;
@@ -904,6 +967,13 @@ svg.svgTop {
     max-width: unset;
     width: 80vw;
     margin: 20px auto 0 auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #servicesContainer #services .box-right {
+    margin: 20px auto;
+    width: 90vw;
   }
 }
 
@@ -945,8 +1015,21 @@ svg.svgTop {
 }
 
 #fbPosts .fbPostsContainer {
-  width: 80vw;
+  padding-top: 50px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(500px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  max-width: 1200px;
   margin: 0 auto;
+  grid-gap: 20px;
+}
+
+#fbPosts .fbPostsContainer .card {
+  background-image: url(../img/circuit.svg);
+  background-color: #232325;
+  background-size: auto 750px;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -954,130 +1037,63 @@ svg.svgTop {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  justify-content: center;
-  padding-top: 50px;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-#fbPosts .fbPostsContainer .cardcon {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-#fbPosts .fbPostsContainer .cardcon .flexgrow {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-}
-
-#fbPosts .fbPostsContainer .card {
-  width: 280px;
-  padding-top: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-image: url(../img/circuit.svg);
   background-color: #232325;
-  background-size: auto 750px;
-  margin: 0 30px;
+  padding: 20px;
 }
 
-#fbPosts .fbPostsContainer .card .whiteSpace {
-  height: 41px;
-}
-
-#fbPosts .fbPostsContainer .card button {
-  background: transparent;
-  outline: none;
-  text-align: right;
-  border: none;
-  color: #0057a9;
-  font-size: 16px;
-  padding: 10px 15px;
-  font-weight: bolder;
-  font-family: "Abel", sans-serif;
-  width: 100%;
-}
-
-#fbPosts .fbPostsContainer .card button:hover {
-  cursor: pointer;
+#fbPosts .fbPostsContainer .card .cardMediaContainer img,
+#fbPosts .fbPostsContainer .card .cardMediaContainer iframe {
+  width: 200px;
+  height: 200px;
+  border: 2px solid #ffffff4a;
 }
 
 #fbPosts .fbPostsContainer .card .cardMessage {
-  padding: 10px;
+  padding-left: 20px;
   color: white;
-  width: 100%;
-  text-transform: capitalize;
-  min-height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
-  overflow: hidden;
-  max-height: 70px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
 }
 
-#fbPosts .fbPostsContainer .card a {
-  word-wrap: break-word;
-  text-transform: none !important;
-  margin-top: 5px;
+#fbPosts .fbPostsContainer .card .cardMessage a {
+  word-break: break-all;
   color: white;
+  overflow: auto;
 }
 
-#fbPosts .fbPostsContainer .card a:hover {
+#fbPosts .fbPostsContainer .card .cardMessage a:hover {
   color: #0057a9;
 }
 
-#fbPosts .fbPostsContainer .cardMediaContainer {
-  width: 260px;
-  height: 260px;
-  overflow: hidden;
-  border: 1px solid #ffffff3b;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-#fbPosts .fbPostsContainer .cardMediaContainer:hover {
-  border: 1px solid #0057a9;
-  opacity: 0.8;
-}
-
-#fbPosts .fbPostsContainer .cardMediaContainer a {
-  width: 100%;
-}
-
-#fbPosts .fbPostsContainer .cardMediaContainer a img,
-#fbPosts .fbPostsContainer .cardMediaContainer a iframe {
-  width: 100%;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-/* desktop */
-/* laptop */
-/* tablet */
-/* mobile */
-@media (max-width: 849px) {
+@media screen and (max-width: 500px) {
   #fbPosts .fbPostsContainer .card {
-    margin-top: 20px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #fbPosts .fbPostsContainer .card .cardMessage {
+    padding-left: 0;
   }
   #fbPosts .fbPostsContainer {
-    width: 100%;
+    -ms-grid-columns: (minmax(240px, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    max-width: 90vw;
   }
 }
 
@@ -1270,4 +1286,36 @@ a svg .blueOnHover:hover {
   height: 12px;
   width: auto;
 }
+
+/* mobile */
+@media screen and (max-width: 480px) {
+  footer #footerContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  footer #footerContainer #social {
+    margin-bottom: 15px;
+  }
+  footer #footerContainer .copyright {
+    padding: 0 10px;
+    text-align: center;
+  }
+}
+
+/* tablet */
+/* laptop */
+/* desktop */
+/* mobile */
+/* tablet */
+@media screen and (max-width: 980px) {
+  #backToTop {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+
+/* laptop */
+/* desktop */
 /*# sourceMappingURL=main.css.map */

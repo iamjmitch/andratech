@@ -9,14 +9,17 @@
   ></video>
   <span>
     <div class="heroHeader">
-      TECH SUPPORT WHEN YOU NEED IT
+      TECH SUPPORT <br class="mobileonly" />
+      WHEN YOU NEED IT
 
       <div class="heroHeaderSubContainer">
         <div class="heroHeaderSubLeft">
-          24 Hours A Day <b>/</b> 7 Days A Week
+          24 Hours A Day <b class="deskonly">/</b> <br class="mobileonly" />
+          7 Days A Week
         </div>
         <div class="heroHeaderSubBottom">
-          Servicing North Brisbane and surrounding areas
+          Servicing North Brisbane <br class="mobileonly" />
+          and surrounding areas
         </div>
       </div>
       <div class="buttonCont">

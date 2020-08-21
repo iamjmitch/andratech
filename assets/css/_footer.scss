@@ -48,3 +48,27 @@ a svg .blueOnHover:hover {
     width: auto;
   }
 }
+
+/* mobile */
+@media screen and (max-width: 480px) {
+  footer #footerContainer {
+    flex-direction: column;
+  }
+  footer #footerContainer #social {
+    margin-bottom: 15px;
+  }
+
+  footer #footerContainer .copyright {
+    padding: 0 10px;
+    text-align: center;
+  }
+}
+/* tablet */
+@media screen and (max-width: 980px) {
+}
+/* laptop */
+@media screen and (max-width: 1200px) {
+}
+/* desktop */
+@media screen and (max-width: 1500px) {
+}

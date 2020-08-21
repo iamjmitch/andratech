@@ -109,3 +109,20 @@ html {
 }
 
 @import './footer';
+
+/* mobile */
+@media screen and (max-width: 480px) {
+}
+/* tablet */
+@media screen and (max-width: 980px) {
+  #backToTop {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+/* laptop */
+@media screen and (max-width: 1200px) {
+}
+/* desktop */
+@media screen and (max-width: 1500px) {
+}

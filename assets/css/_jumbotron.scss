@@ -70,3 +70,54 @@
     }
   }
 }
+
+.mobileonly {
+  display: none;
+}
+
+.deskonly {
+  display: inline;
+}
+
+/* desktop */
+@media screen and (max-width: 1550px) {
+}
+
+/* laptop */
+@media screen and (max-width: 1200px) {
+}
+
+/* tablet */
+@media screen and (max-width: 980px) {
+}
+
+/* mobile */
+@media screen and (max-width: 849px) {
+}
+
+@media screen and (max-width: 500px) {
+  #hero span .heroHeader {
+    font-size: 12vw;
+  }
+
+  .mobileonly {
+    display: block;
+  }
+
+  .deskonly {
+    display: none;
+  }
+
+  #hero span .heroHeaderSubContainer .heroHeaderSubLeft {
+    font-size: 7vw;
+    color: white;
+    font-weight: bolder;
+  }
+
+  #hero span {
+    background: rgba(0, 0, 0, 0.581);
+  }
+  .heroHeaderSubBottom {
+    font-size: 26px;
+  }
+}

@@ -97,9 +97,9 @@
   }
 }
 /* desktop */
-@media (max-width: 1550px) {
+@media screen and (max-width: 1550px) {
   #whyChooseUsContainer #whyChooseUs {
-    width: 70vw !important;
+    width: 70vw;
   }
   #whyChooseUsContainer #whyChooseUs .boxContainer {
     width: 700px;
@@ -107,7 +107,7 @@
 }
 
 /* laptop */
-@media (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
 }
 #whyChooseUsContainer #whyChooseUs {
   width: 100%;
@@ -118,9 +118,30 @@
 }
 
 /* tablet */
-@media (max-width: 980px) {
+@media screen and (max-width: 980px) {
 }
 
 /* mobile */
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
+  #whyChooseUsContainer #whyChooseUs {
+    width: 80vw;
+  }
+
+  #whyChooseUsContainer #whyChooseUs .boxContainer {
+    width: 100%;
+  }
+
+  #whyChooseUsContainer #whyChooseUs .boxContainer .box {
+    width: 100%;
+    margin: 15px 0;
+  }
+
+  #whyChooseUsContainer #whyChooseUs .boxContainer .box .iconBox .icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  #whyChooseUsContainer #whyChooseUs .boxContainer .box .textBox h3 {
+    font-size: 25px;
+  }
 }

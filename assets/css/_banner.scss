@@ -82,18 +82,18 @@ svg.svgTop {
 }
 
 /* desktop */
-@media (max-width: 1500px) {
+@media screen and (max-width: 1500px) {
 }
 
 /* laptop */
-@media (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
   #banner .contentContainer h4 {
     font-size: 4vw;
     text-align: center;
   }
 }
 /* tablet */
-@media (max-width: 980px) {
+@media screen and (max-width: 980px) {
   #banner .contentContainer h4 {
     font-size: 6vw;
     text-align: center;
@@ -101,9 +101,19 @@ svg.svgTop {
 }
 
 /* mobile */
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   #banner .contentContainer h4 {
-    font-size: 9vw;
+    font-size: 8vw;
     text-align: center;
+    margin-bottom: 10px;
+  }
+
+  svg.svgBottom,
+  svg.svgTop {
+    display: none;
+  }
+
+  #banner span {
+    background: #00000066;
   }
 }

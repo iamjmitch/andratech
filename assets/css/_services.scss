@@ -54,7 +54,7 @@
 }
 
 /* tablet */
-@media (max-width: 980px) {
+@media screen and (max-width: 980px) {
   #servicesContainer {
     #services {
       flex-direction: column !important;
@@ -66,5 +66,12 @@
         margin: 20px auto 0 auto;
       }
     }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #servicesContainer #services .box-right {
+    margin: 20px auto;
+    width: 90vw;
   }
 }
