@@ -22,6 +22,7 @@
           <li><a href="./pricing.php">PRICING</a></li>
           <li><a href="./about-us.php">ABOUT US</a></li>
           <li><a href="./our-work.php">OUR WORK</a></li>
+          <li><a href="./contact.php.php">CONTACT US</a></li>
         </ul>         
             <a href="./contact.php"
               ><button class="headerButton">FREE QUOTE</button></a>

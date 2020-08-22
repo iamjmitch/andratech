@@ -192,7 +192,7 @@
           transform: rotate(-45deg) translate(6px, -3px);
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 830px) {
   #header nav #navContainer {
     width: 100%;
     -webkit-box-pack: end;
@@ -682,7 +682,7 @@ body {
           transform: rotate(-45deg) translate(6px, -3px);
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 830px) {
   #header nav #navContainer {
     width: 100%;
     -webkit-box-pack: end;
