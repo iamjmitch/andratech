@@ -18,7 +18,7 @@
   .fbPostsContainer {
     padding-top: 50px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(470px, 1fr));
     max-width: 1200px;
     margin: 0 auto;
     grid-gap: 20px;
@@ -37,6 +37,12 @@
           width: 200px;
           height: 200px;
           border: 2px solid #ffffff4a;
+          object-fit: cover;
+          transition: 0.5s;
+          &:hover {
+            border-color: $blue;
+            transform: scale(1.02);
+          }
         }
       }
       .cardMessage {
@@ -47,10 +53,12 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+        text-transform: capitalize;
         a {
           word-break: break-all;
           color: white;
           overflow: auto;
+          text-transform: lowercase;
           &:hover {
             color: $blue;
           }
@@ -58,82 +66,27 @@
       }
     }
   }
+}
+@media screen and (max-width: 1377px) {
+  #whyChooseUsContainer #whyChooseUs .boxContainer {
+    max-width: 800px;
+  }
+}
 
-  // .fbPostsContainer {
-  //   @include contentContainer(80vw);
-  //   @include flex(row);
-  //   flex-wrap: wrap;
-  //   justify-content: center;
-  //   padding-top: 50px;
-
-  //   flex-wrap: wrap;
-  //   align-items: center;
-  //   .cardcon {
-  //     display: flex;
-  //     flex-direction: column;
-  //     .flexgrow {
-  //       flex-grow: 1;
-  //     }
-  //   }
-
-  //   .card {
-  //     max-width: 500px;
-  //     padding: 20px;
-  //     display: flex;
-  //     flex-direction: row;
-  //     align-items: center;
-  //     background-image: url(../img/circuit.svg);
-  //     background-color: #232325;
-  //     background-size: auto 750px;
-  //     margin: 0 20px;
-  //     margin-bottom: 20px;
-
-  //     .cardMessage {
-  //       padding: 10px;
-  //       color: white;
-  //       width: 100%;
-  //       text-transform: capitalize;
-  //       min-height: 70px;
-  //       text-align: center;
-  //       overflow: hidden;
-  //       max-height: 70px;
-  //       transition: 0.3s;
-  //     }
-
-  //     a {
-  //       word-wrap: break-word;
-  //       text-transform: none !important;
-  //       margin-top: 5px;
-  //       color: white;
-  //       &:hover {
-  //         color: $blue;
-  //       }
-  //     }
-  //   }
-  //   .cardMediaContainer {
-  //     width: 260px;
-  //     height: 260px;
-  //     overflow: hidden;
-  //     border: 1px solid #ffffff3b;
-  //     transition: 0.5s;
-  //     &:hover {
-  //       border: 1px solid $blue;
-  //       opacity: 0.8;
-  //     }
-  //     a {
-  //       width: 100%;
-
-  //       img,
-  //       iframe {
-  //         width: 100%;
-  //         transition: 0.5s;
-  //       }
-  //     }
-  //   }
-  // }
+@media screen and (max-width: 1250px) {
+  #fbPosts .fbPostsContainer {
+    padding: 20px;
+    padding-top: 50px;
+  }
 }
 
 @media screen and (max-width: 500px) {
+  #fbPosts .fbPostsContainer .card .cardMediaContainer img,
+  #fbPosts .fbPostsContainer .card .cardMediaContainer iframe {
+    width: 100%;
+    height: unset;
+  }
+
   #fbPosts .fbPostsContainer .card {
     flex-direction: column;
     align-items: center;
@@ -141,6 +94,7 @@
 
   #fbPosts .fbPostsContainer .card .cardMessage {
     padding-left: 0;
+    padding-top: 15px;
   }
 
   #fbPosts .fbPostsContainer {

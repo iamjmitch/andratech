@@ -19,6 +19,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  min-width: 310px;
+}
+
 #landing {
   display: flex;
   flex-direction: column;

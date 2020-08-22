@@ -5,22 +5,27 @@
     </div>
     <nav>
       <div id="navContainer">
+        <div class="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="  ">
         <a class="hidden left" href="#"
           ><div class="logoSmall">
             <img src="./assets/img/logo-small.svg" alt="" /></div
         ></a>
-        <ul>
+        </div>
+        <ul class="navbarUL">
           <li><a href="./index.php">HOME</a></li>
           <li><a href="./services.php">SERVICES</a></li>
           <li><a href="./pricing.php">PRICING</a></li>
           <li><a href="./about-us.php">ABOUT US</a></li>
           <li><a href="./our-work.php">OUR WORK</a></li>
-
-          <li>
+        </ul>         
             <a href="./contact.php"
-              ><button class="headerButton">FREE QUOTE</button></a
-            >
-          </li>
+              ><button class="headerButton">FREE QUOTE</button></a>
+          
         </ul>
       </div>
     </nav>
