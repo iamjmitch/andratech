@@ -6,9 +6,9 @@
     <nav>
       <div id="navContainer">
         <div class="hamburger">
-          <div></div>
-          <div></div>
-          <div></div>
+          <div class='line1'></div>
+          <div class='line2'></div>
+          <div class='line3'></div>
         </div>
         <div class="  ">
         <a class="hidden left" href="#"

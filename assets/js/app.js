@@ -21,23 +21,13 @@ function navChange() {
     navbar.classList.add('sticky');
     smallLogo.classList.add('showMiniLogo');
     smallLogo.classList.remove('hidden');
-    bTTbtn.style.opacity = '1';
+    // bTTbtn.style.opacity = '1';
   } else {
     navbar.classList.remove('sticky');
     smallLogo.classList.remove('showMiniLogo');
     smallLogo.classList.add('hidden');
-    bTTbtn.style.opacity = '0';
+    // bTTbtn.style.opacity = '0';
   }
-}
-
-//map setup & options
-function initMap() {
-  var coordinates = { lat: -27.2429453, lng: 152.9973342 };
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 14,
-    center: coordinates,
-  });
-  var marker = new google.maps.Marker({ position: coordinates, map: map });
 }
 
 //Back to Top Button
@@ -65,9 +55,15 @@ window.fbAsyncInit = function () {
 
 var hamburger = qs('.hamburger');
 var links = qs('.navbarUL');
+var hamLine1 = qs('.line1');
+var hamLine2 = qs('.line2');
+var hamLine3 = qs('.line3');
 
 hamburger.addEventListener('click', () => {
   links.classList.toggle('active');
+  hamLine1.classList.toggle('active');
+  hamLine2.classList.toggle('active');
+  hamLine3.classList.toggle('active');
 });
 
 // function waitFB() {

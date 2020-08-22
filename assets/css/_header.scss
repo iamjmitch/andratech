@@ -115,11 +115,21 @@
     width: 20px;
     background-color: white;
     margin: 2px 0;
+    transition: transform 0.5s ease-in;
   }
 }
 
 .hamburger {
   display: none;
+  .active.line1 {
+    transform: rotate(45deg) translate(5px, 2px);
+  }
+  .active.line2 {
+    transform: translateX(-300%);
+  }
+  .active.line3 {
+    transform: rotate(-45deg) translate(6px, -3px);
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -136,21 +146,25 @@
 @media screen and (max-width: 720px) {
   #header nav #navContainer ul {
     position: absolute;
-    height: 90vh;
+    height: calc(100vh - 56px);
     flex-direction: column;
     left: 0;
     margin-top: 56px;
     align-content: space-around;
     justify-content: center;
-    background-color: $darkGrey;
-    width: 100%;
+    background-color: $lightGrey;
+    width: 50%;
     transform: translatex(-100%);
     min-width: 300px;
-    z-index: 1001;
+    transition: transform 0.5s ease-in;
 
     li {
       a {
         color: white;
+        font-size: 20px;
+        &:hover {
+          color: $blue;
+        }
       }
       color: white;
       margin: 20px 0;
@@ -158,7 +172,6 @@
   }
   #header nav #navContainer ul.active {
     transform: translatex(0);
-    transition: transform 0.5s ease-in;
   }
 
   #header #logoFull {

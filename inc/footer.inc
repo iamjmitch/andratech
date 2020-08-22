@@ -61,7 +61,7 @@
   </a>
 </div>
 
-<div id="backToTop">
+<!-- <div id="backToTop">
   <span class="tooltiptext">Back To Top</span>
   <a href="javascript:void(0)" onclick="window.scrollTo(0, 0);"
     ><svg
@@ -77,4 +77,4 @@
       />
     </svg>
   </a>
-</div>
+</div> -->

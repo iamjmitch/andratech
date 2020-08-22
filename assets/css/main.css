@@ -167,10 +167,29 @@
   width: 20px;
   background-color: white;
   margin: 2px 0;
+  -webkit-transition: -webkit-transform 0.5s ease-in;
+  transition: -webkit-transform 0.5s ease-in;
+  transition: transform 0.5s ease-in;
+  transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
 }
 
 .hamburger {
   display: none;
+}
+
+.hamburger .active.line1 {
+  -webkit-transform: rotate(45deg) translate(5px, 2px);
+          transform: rotate(45deg) translate(5px, 2px);
+}
+
+.hamburger .active.line2 {
+  -webkit-transform: translateX(-300%);
+          transform: translateX(-300%);
+}
+
+.hamburger .active.line3 {
+  -webkit-transform: rotate(-45deg) translate(6px, -3px);
+          transform: rotate(-45deg) translate(6px, -3px);
 }
 
 @media screen and (max-width: 900px) {
@@ -189,7 +208,7 @@
 @media screen and (max-width: 720px) {
   #header nav #navContainer ul {
     position: absolute;
-    height: 90vh;
+    height: calc(100vh - 56px);
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -201,12 +220,15 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    background-color: #121213;
-    width: 100%;
+    background-color: #232325;
+    width: 50%;
     -webkit-transform: translatex(-100%);
             transform: translatex(-100%);
     min-width: 300px;
-    z-index: 1001;
+    -webkit-transition: -webkit-transform 0.5s ease-in;
+    transition: -webkit-transform 0.5s ease-in;
+    transition: transform 0.5s ease-in;
+    transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
   }
   #header nav #navContainer ul li {
     color: white;
@@ -214,14 +236,14 @@
   }
   #header nav #navContainer ul li a {
     color: white;
+    font-size: 20px;
+  }
+  #header nav #navContainer ul li a:hover {
+    color: #0057a9;
   }
   #header nav #navContainer ul.active {
     -webkit-transform: translatex(0);
             transform: translatex(0);
-    -webkit-transition: -webkit-transform 0.5s ease-in;
-    transition: -webkit-transform 0.5s ease-in;
-    transition: transform 0.5s ease-in;
-    transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
   }
   #header #logoFull {
     display: none;
@@ -635,10 +657,29 @@ body {
   width: 20px;
   background-color: white;
   margin: 2px 0;
+  -webkit-transition: -webkit-transform 0.5s ease-in;
+  transition: -webkit-transform 0.5s ease-in;
+  transition: transform 0.5s ease-in;
+  transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
 }
 
 .hamburger {
   display: none;
+}
+
+.hamburger .active.line1 {
+  -webkit-transform: rotate(45deg) translate(5px, 2px);
+          transform: rotate(45deg) translate(5px, 2px);
+}
+
+.hamburger .active.line2 {
+  -webkit-transform: translateX(-300%);
+          transform: translateX(-300%);
+}
+
+.hamburger .active.line3 {
+  -webkit-transform: rotate(-45deg) translate(6px, -3px);
+          transform: rotate(-45deg) translate(6px, -3px);
 }
 
 @media screen and (max-width: 900px) {
@@ -657,7 +698,7 @@ body {
 @media screen and (max-width: 720px) {
   #header nav #navContainer ul {
     position: absolute;
-    height: 90vh;
+    height: calc(100vh - 56px);
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -669,12 +710,15 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    background-color: #121213;
-    width: 100%;
+    background-color: #232325;
+    width: 50%;
     -webkit-transform: translatex(-100%);
             transform: translatex(-100%);
     min-width: 300px;
-    z-index: 1001;
+    -webkit-transition: -webkit-transform 0.5s ease-in;
+    transition: -webkit-transform 0.5s ease-in;
+    transition: transform 0.5s ease-in;
+    transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
   }
   #header nav #navContainer ul li {
     color: white;
@@ -682,14 +726,14 @@ body {
   }
   #header nav #navContainer ul li a {
     color: white;
+    font-size: 20px;
+  }
+  #header nav #navContainer ul li a:hover {
+    color: #0057a9;
   }
   #header nav #navContainer ul.active {
     -webkit-transform: translatex(0);
             transform: translatex(0);
-    -webkit-transition: -webkit-transform 0.5s ease-in;
-    transition: -webkit-transform 0.5s ease-in;
-    transition: transform 0.5s ease-in;
-    transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
   }
   #header #logoFull {
     display: none;
