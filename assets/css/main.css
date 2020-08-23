@@ -184,8 +184,8 @@
 }
 
 .hamburger .active.line1 {
-  -webkit-transform: rotate(45deg) translate(5px, 2px);
-          transform: rotate(45deg) translate(5px, 2px);
+  -webkit-transform: rotate(45deg) translate(6px, 2px);
+          transform: rotate(45deg) translate(6px, 2px);
 }
 
 .hamburger .active.line2 {
@@ -679,8 +679,8 @@ body {
 }
 
 .hamburger .active.line1 {
-  -webkit-transform: rotate(45deg) translate(5px, 2px);
-          transform: rotate(45deg) translate(5px, 2px);
+  -webkit-transform: rotate(45deg) translate(6px, 2px);
+          transform: rotate(45deg) translate(6px, 2px);
 }
 
 .hamburger .active.line2 {

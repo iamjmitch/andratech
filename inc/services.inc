@@ -1,4 +1,4 @@
-<section id="servicesContainer" style="overflow-x: hidden;">
+<section id="servicesContainer" style="overflow-x: hidden; overflow-y: hidden;">
   <div id="services">
     <div class="box-left" data-aos="fade-up-right">
       <h4>HOW WE CAN HELP YOU</h4>
