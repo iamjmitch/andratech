@@ -173,6 +173,12 @@
   transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
 }
 
+.line2 {
+  opacity: 1;
+  -webkit-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
+}
+
 .hamburger {
   display: none;
 }
@@ -185,6 +191,7 @@
 .hamburger .active.line2 {
   -webkit-transform: translateX(-300%);
           transform: translateX(-300%);
+  opacity: 0;
 }
 
 .hamburger .active.line3 {
@@ -225,10 +232,8 @@
     -webkit-transform: translatex(-100%);
             transform: translatex(-100%);
     min-width: 300px;
-    -webkit-transition: -webkit-transform 0.5s ease-in;
-    transition: -webkit-transform 0.5s ease-in;
-    transition: transform 0.5s ease-in;
-    transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
+    -webkit-transition: 0.5s ease-in;
+    transition: 0.5s ease-in;
   }
   #header nav #navContainer ul li {
     color: white;
@@ -663,6 +668,12 @@ body {
   transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
 }
 
+.line2 {
+  opacity: 1;
+  -webkit-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
+}
+
 .hamburger {
   display: none;
 }
@@ -675,6 +686,7 @@ body {
 .hamburger .active.line2 {
   -webkit-transform: translateX(-300%);
           transform: translateX(-300%);
+  opacity: 0;
 }
 
 .hamburger .active.line3 {
@@ -715,10 +727,8 @@ body {
     -webkit-transform: translatex(-100%);
             transform: translatex(-100%);
     min-width: 300px;
-    -webkit-transition: -webkit-transform 0.5s ease-in;
-    transition: -webkit-transform 0.5s ease-in;
-    transition: transform 0.5s ease-in;
-    transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
+    -webkit-transition: 0.5s ease-in;
+    transition: 0.5s ease-in;
   }
   #header nav #navContainer ul li {
     color: white;

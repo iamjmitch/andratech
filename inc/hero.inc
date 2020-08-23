@@ -8,7 +8,7 @@
     autoplay
   ></video>
   <span>
-    <div class="heroHeader">
+    <div class="heroHeader" data-aos="fade-right">
       TECH SUPPORT <br class="mobileonly" />
       WHEN YOU NEED IT
 

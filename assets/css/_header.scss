@@ -119,6 +119,11 @@
   }
 }
 
+.line2 {
+  opacity: 1;
+  transition: 0.5s ease-in;
+}
+
 .hamburger {
   display: none;
   .active.line1 {
@@ -126,6 +131,7 @@
   }
   .active.line2 {
     transform: translateX(-300%);
+    opacity: 0;
   }
   .active.line3 {
     transform: rotate(-45deg) translate(6px, -3px);
@@ -156,7 +162,7 @@
     width: 50%;
     transform: translatex(-100%);
     min-width: 300px;
-    transition: transform 0.5s ease-in;
+    transition: 0.5s ease-in;
 
     li {
       a {

@@ -27,7 +27,9 @@
     </svg>
 
     <div class="contentContainer">
-      <h4>IF WE CAN'T FIX THE PROBLEM, YOU DON'T PAY ANYTHING!</h4>
+      <h4 data-aos="fade-right">
+        IF WE CAN'T FIX THE PROBLEM, YOU DON'T PAY ANYTHING!
+      </h4>
       <a href="#"><button class="headerButton">SEE OUR PRICING</button></a>
     </div>
   </div>

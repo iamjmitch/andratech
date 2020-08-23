@@ -16,6 +16,16 @@
       <?php include './inc/footer.inc';?>
     </div>
     <script src="./assets/js/app.js"></script> 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init({
+   easing: 'ease-in-out',
+   duration: 300,
+   delay: 400,
+   once: true,
+   
+});
+    </script>
     
       
 </body>

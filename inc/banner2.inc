@@ -26,8 +26,8 @@
       />
     </svg>
 
-    <div class="contentContainer">
-      <h4>GOT TECHNOLOGY TROUBLES?</h4>
+    <div class="contentContainer" style="overflow-x: hidden;">
+      <h4 data-aos="fade-left">GOT TECHNOLOGY TROUBLES?</h4>
       <a href="#"><button class="headerButton">WE CAN HELP YOU!</button></a>
     </div>
   </div>
