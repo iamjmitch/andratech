@@ -16,7 +16,9 @@ class FBPosts extends api
     //get list of facebook posts
     protected function getPostsList()
     {
+        // var_dump(json_decode(file_get_contents($this->url) , true));
         return json_decode(file_get_contents($this->url) , true);
+        
     }
 
     //validates the post to make sure only posts with a message are displayed. strips out updates like profile changes
@@ -43,13 +45,14 @@ class FBPosts extends api
     //determine what type post is i.e message only, video, photo etc
     protected function getPostType($postData)
     {
-        //message only
+        //if post has an image or video attached
         if (isset($postData['attachments']))
         {
             $this->postHasAttachment($postData);
         }
         else
         {
+            //message only
             $this->postMessageOnly($postData);
         }
     }
@@ -74,8 +77,9 @@ class FBPosts extends api
         }
     }
 
+    // function for if post has a video attached to post. Currently only youtube videos will embed a video on page
     protected function postHasVideo($postData, $videoLink)
-    {
+    {   //will embed youtube video
         if ($this->isYoutube($videoLink))
         {
             $autoPlayRemove = strtok($videoLink, '?');
@@ -88,27 +92,21 @@ class FBPosts extends api
 
         }
         else
-        {
+        {   //for all other video posts such as FB video that have a different way of <iframe>. more video site functions to be added as needed
             $this->postHasImage($postData, true);
 
         }
 
     }
 
-    //function to downlaod external images to server and redeploy with internal URL. Only exists because firefox wont display facebook images due to trackers
-    protected function saveImage($url){
-        $filename =  rand(10000000,100000000);
-        $saveLocation = "./assets/img/tmp/" . $filename . ".jpg";
-        copy($url, $saveLocation);
-        return $saveLocation;
-    }
-
+    
+    // function for if post has an image attached.
     protected function postHasImage($postData, $isVideo = false)
     {
         $thisPost = $postData['attachments']['data'][0];
         $directLink = $thisPost['target']['url'];
         $tempImgLink = $thisPost['media']['image']['src'];
-        $imageLink = $this->isImageBlank($tempImgLink);
+        $imageLink = $this->isImageBlank($tempImgLink, $postData['id']);
         $message = $this->messageHasLink($postData['message']);
         $cardMedia = '<a href="' . $directLink . '" target="_blank">
         <img src="' . $imageLink . '" alt="Facebook Post Image"> 
@@ -117,9 +115,21 @@ class FBPosts extends api
 
     }
 
-   
+    //function to download external images to server and redeploy with internal URI. Only exists because firefox wont display facebook images due to trackers    
+    //uses facebook post-id to keep track of what is already in filesystem
+    protected function saveImage($url, $id){
+        $filename =  $id;
+        $saveLocation = "./assets/img/tmp/" . $filename . ".jpg";
+        //if file already exists and is less than 7 days old, dont re-download image, just return existing URI (7days == 168 hours, 3600 seconds in 1 hour)
+        if (file_exists($saveLocation) && (time()-filemtime($saveLocation) < 168 * 3600)){
+            return $saveLocation;            
+        }else{        
+            copy($url, $saveLocation);
+            return $saveLocation;
+        }
+    }
 
-    //function to strip the relevant data from the post object and pass to cardMaker() to output
+   //function to strip the relevant data from the post object and pass to cardMaker() to output
     protected function postMessageOnly($postData)
     {
         $imgPath = './assets/img/default.jpg';
@@ -155,7 +165,7 @@ class FBPosts extends api
     }
 
     //checks to see if attached images is greater than 1px and if not returns a default image path. safe guard against broken links
-    protected function isImageBlank($link)
+    protected function isImageBlank($link, $id)
     {
         $getImageSize = getimagesize($link);
         $width = substr($getImageSize[3], 0, strpos($getImageSize[3], ' '));
@@ -168,7 +178,7 @@ class FBPosts extends api
         }
         else
         {
-            $return = $this->saveImage($link);
+            $return = $this->saveImage($link, $id);
         }
         return $return;
     }
