@@ -95,20 +95,29 @@ class FBPosts extends api
 
     }
 
+    //function to downlaod external images to server and redeploy with internal URL. Only exists because firefox wont display facebook images due to trackers
+    protected function saveImage($url){
+        $filename =  rand(10000000,100000000);
+        $saveLocation = "./assets/img/tmp/" . $filename . ".jpg";
+        copy($url, $saveLocation);
+        return $saveLocation;
+    }
+
     protected function postHasImage($postData, $isVideo = false)
     {
         $thisPost = $postData['attachments']['data'][0];
         $directLink = $thisPost['target']['url'];
         $tempImgLink = $thisPost['media']['image']['src'];
         $imageLink = $this->isImageBlank($tempImgLink);
-        
         $message = $this->messageHasLink($postData['message']);
         $cardMedia = '<a href="' . $directLink . '" target="_blank">
-        <img src="' . $imageLink . '" alt="' . $postData['message'] . '"> 
+        <img src="' . $imageLink . '" alt="Facebook Post Image"> 
         </a>';
         $this->cardMaker($cardMedia, $message);
 
     }
+
+   
 
     //function to strip the relevant data from the post object and pass to cardMaker() to output
     protected function postMessageOnly($postData)
@@ -128,7 +137,7 @@ class FBPosts extends api
                                 ' . $cardMedia . '
                             </div>
                             <div class="cardMessage">
-                            ' . $message . '
+                            ' . addslashes($message) . '
                             </div>
                             
                         </div>                           
@@ -159,7 +168,7 @@ class FBPosts extends api
         }
         else
         {
-            $return = $link;
+            $return = $this->saveImage($link);
         }
         return $return;
     }
