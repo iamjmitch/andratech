@@ -20,7 +20,7 @@
     <script>
     AOS.init({
    easing: 'ease-in-out',
-   duration: 800,
+   duration: 500,
    delay: 300,
    once: true,
    

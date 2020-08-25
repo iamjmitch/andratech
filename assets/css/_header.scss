@@ -32,17 +32,24 @@
       font-family: $headerFont;
       font-weight: bolder;
       font-size: 16px;
+      transition: 0.2s;
       &:focus {
         border: 1px solid $blue;
+      }
+      &:hover {
+        cursor: pointer;
+        color: $blue;
+        box-shadow: 0px 3px 0px 0px $blue;
       }
       .headerButton {
         background-color: $blue;
         color: white;
         border: none;
         outline: none;
+        margin: 10px 0 10px 15px;
         padding: 10px 20px;
         font-weight: 700;
-        margin: 2px 0;
+
         transition: 0.5s;
         &:hover {
           cursor: pointer;
@@ -60,6 +67,7 @@
         img {
           height: 16px;
           width: auto;
+          display: block;
         }
       }
     }
@@ -150,6 +158,9 @@
 }
 
 @media screen and (max-width: 720px) {
+  #header nav a .headerButton {
+    margin: 2px 15px;
+  }
   #header nav #navContainer ul {
     position: absolute;
     height: calc(100vh - 56px);
