@@ -17,7 +17,7 @@ var sticky = navbar.offsetTop;
 const bTTbtn = qs('#backToTop');
 
 function navChange() {
-  if (window.pageYOffset >= sticky) {
+  if (window.pageYOffset >= sticky - 1) {
     navbar.classList.add('sticky');
     smallLogo.classList.add('showMiniLogo');
     smallLogo.classList.remove('hidden');

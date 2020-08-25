@@ -81,14 +81,23 @@
 
 /* desktop */
 @media screen and (max-width: 1550px) {
+  #hero span .heroHeader {
+    font-size: 4.5vw;
+  }
 }
 
 /* laptop */
 @media screen and (max-width: 1200px) {
+  #hero span .heroHeader {
+    font-size: 5vw;
+  }
 }
 
 /* tablet */
 @media screen and (max-width: 980px) {
+  #hero span .heroHeader {
+    font-size: 6vw;
+  }
 }
 
 /* mobile */
