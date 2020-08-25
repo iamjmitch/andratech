@@ -6,6 +6,7 @@
     muted
     loop
     autoplay
+    playsinline
   ></video>
   <span>
     <div class="heroHeader" data-aos="fade-right">
