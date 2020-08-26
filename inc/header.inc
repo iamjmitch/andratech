@@ -1,7 +1,9 @@
 <div id="header">
   <div id="fullLogoContainer">
-    <div id="logoFull">
+    <div id="logoFull" >
+      <div class="svgCont">
       <img src="./assets/img/logo.svg" alt="Andratech Logo" />
+    </div>
     </div>
     <nav>
       <div id="navContainer">

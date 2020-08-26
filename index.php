@@ -1,5 +1,5 @@
 <?php include './inc/head.inc';?>
-  <body>
+  <body onload="logoChange();">
     <div id="fullPage">
       <div id="landing">
       <?php include './inc/header.inc';?>
