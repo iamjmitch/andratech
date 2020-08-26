@@ -32,39 +32,39 @@ function navChange() {
 
 //Back to Top Button
 
-window.fbAsyncInit = function () {
-  FB.init({
-    appId: '300924894467707',
-    xfbml: true,
-    version: 'v8.0',
-  });
-  FB.AppEvents.logPageView();
-};
+// window.fbAsyncInit = function () {
+//   FB.init({
+//     appId: '300924894467707',
+//     xfbml: true,
+//     version: 'v8.0',
+//   });
+//   FB.AppEvents.logPageView();
+// };
 
-(function (d, s, id) {
-  var js,
-    fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {
-    return;
-  }
-  js = d.createElement(s);
-  js.id = id;
-  js.src = 'https://connect.facebook.net/en_US/sdk.js';
-  fjs.parentNode.insertBefore(js, fjs);
-})(document, 'script', 'facebook-jssdk');
+// (function (d, s, id) {
+//   var js,
+//     fjs = d.getElementsByTagName(s)[0];
+//   if (d.getElementById(id)) {
+//     return;
+//   }
+//   js = d.createElement(s);
+//   js.id = id;
+//   js.src = 'https://connect.facebook.net/en_US/sdk.js';
+//   fjs.parentNode.insertBefore(js, fjs);
+// })(document, 'script', 'facebook-jssdk');
 
-var hamburger = qs('.hamburger');
-var links = qs('.navbarUL');
-var hamLine1 = qs('.line1');
-var hamLine2 = qs('.line2');
-var hamLine3 = qs('.line3');
+// var hamburger = qs('.hamburger');
+// var links = qs('.navbarUL');
+// var hamLine1 = qs('.line1');
+// var hamLine2 = qs('.line2');
+// var hamLine3 = qs('.line3');
 
-hamburger.addEventListener('click', () => {
-  links.classList.toggle('active');
-  hamLine1.classList.toggle('active');
-  hamLine2.classList.toggle('active');
-  hamLine3.classList.toggle('active');
-});
+// hamburger.addEventListener('click', () => {
+//   links.classList.toggle('active');
+//   hamLine1.classList.toggle('active');
+//   hamLine2.classList.toggle('active');
+//   hamLine3.classList.toggle('active');
+// });
 
 //logo animate
 //a bit weird implementation but on screen paint, if the svg is inline, it adds a render blocking time of about 1s which visually looked annoying so by default the page loads a svg inside a <img> tag and then swaps it out to inline after the screen has painted removing the render blocking. svg needs to be inline in order to have the 'mouseenter' event lsitener working to trigger the animation.
