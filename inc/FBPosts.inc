@@ -147,7 +147,7 @@ class FBPosts extends api
                                 ' . $cardMedia . '
                             </div>
                             <div class="cardMessage">
-                            ' . addslashes($message) . '
+                            ' . ($message) . '
                             </div>
                             
                         </div>                           
